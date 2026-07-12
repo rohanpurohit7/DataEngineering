@@ -1,0 +1,6 @@
+create 'customer_events', 'event', 'metrics'
+put 'customer_events', '1', 'event:type', 'purchase'
+put 'customer_events', '1', 'event:region', 'South'
+put 'customer_events', '1', 'metrics:amount', '120.50'
+scan 'customer_events'
+get 'customer_events', '1'

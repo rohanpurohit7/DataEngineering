@@ -1,0 +1,49 @@
+dataset:
+  name: customer_behavior
+  description: Customer profile and event data used to demonstrate scalable batch analytics.
+  raw_prefix: data/raw/customer_behavior/
+  curated_prefix: data/curated/customer_behavior/
+  analytics_prefix: data/analytics/customer_behavior/
+  partition_columns:
+    - event_date
+    - region
+
+sources:
+  customer_profiles:
+    file: customer_profiles.csv
+    primary_key:
+      - customer_id
+    schema:
+      customer_id: integer
+      region: string
+      seed_segment: string
+      monthly_income: float
+      tenure_months: integer
+      digital_logins_30d: integer
+      purchase_frequency_30d: integer
+      avg_order_value: float
+      support_calls_90d: integer
+      returns_90d: integer
+      engagement_score: float
+      churned: integer
+
+  customer_events:
+    file: customer_events.csv
+    primary_key:
+      - event_id
+    foreign_keys:
+      customer_id: customer_profiles.customer_id
+    schema:
+      event_id: integer
+      customer_id: integer
+      region: string
+      event_type: string
+      amount: float
+      event_ts: timestamp
+
+quality_rules:
+  - customer_id must not be null
+  - event_id must be unique
+  - amount must be greater than or equal to zero
+  - churned must be either 0 or 1
+  - region must be one of Northeast, South, Midwest, West

@@ -1,0 +1,10 @@
+[
+  {
+    "Classification": "mapred-site",
+    "Properties": {
+      "mapreduce.framework.name": "yarn",
+      "mapreduce.map.memory.mb": "2048",
+      "mapreduce.reduce.memory.mb": "4096"
+    }
+  }
+]

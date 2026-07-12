@@ -1,0 +1,9 @@
+[
+  {
+    "Classification": "yarn-site",
+    "Properties": {
+      "yarn.nodemanager.vmem-check-enabled": "false",
+      "yarn.scheduler.maximum-allocation-mb": "24576"
+    }
+  }
+]
