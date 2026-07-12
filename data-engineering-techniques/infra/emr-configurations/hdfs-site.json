@@ -1,0 +1,9 @@
+[
+  {
+    "Classification": "hdfs-site",
+    "Properties": {
+      "dfs.replication": "2",
+      "dfs.namenode.name.dir": "/mnt/name"
+    }
+  }
+]

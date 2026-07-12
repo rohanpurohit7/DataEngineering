@@ -1,0 +1,9 @@
+[
+  {
+    "Classification": "hbase-site",
+    "Properties": {
+      "hbase.rootdir": "s3://REPLACE_BUCKET/hbase",
+      "hbase.cluster.distributed": "true"
+    }
+  }
+]
